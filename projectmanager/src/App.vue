@@ -37,7 +37,7 @@ export default {
       }
   },
 
-  methods: {
+  methods: { //다른 테스트용
     searchWeather() {
       const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=5dc753fbb35d7e99e7fd80b06a9a18a7'
       this.$http.get(`${BASE_URL}`)
