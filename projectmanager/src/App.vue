@@ -16,6 +16,21 @@
       <p>도시명 : {{ city }}</p>
     </div>
 
+    <!--login page-->
+    <div v-if='view === false'>
+      <h2>로그인</h2>
+      <p>아이디 : <input type="text" v-model="id"></p>
+      <p>비밀번호 : <input type="password" v-model="pw"></p>
+      <button type="button" @click="login">로그인</button>
+    </div> 
+
+    <div id="nav">
+      <router-link to="/home">home</router-link>|
+      <router-link to="/index">index</router-link>
+    </div>
+    <router-view/>
+
+
   </div>
 </template>
 
@@ -28,7 +43,11 @@ export default {
       news:[],
       view: false,
       country: '',
-      city: ''
+      city: '',
+
+      userId:'',
+      userPw:''
+    
     }
   },
   computed: {
@@ -47,7 +66,16 @@ export default {
         this.view = true
         console.log(result)
       })
-    }
+    },
+
+    //로그인
+    login() {
+      if(this.id === 'admin' && this.pw === '1234') {
+        this.view = true
+      } else {
+        alert('아이디와 비밀번호를 확인해주세요.')
+      }
+    },
   },
 
   created() {
