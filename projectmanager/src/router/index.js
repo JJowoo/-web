@@ -1,19 +1,29 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import index from '../views/index.vue'
+import home from '../views/home.vue'
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
+export default new Router({
+    routes: [
+        {
+            path: '/',
+            name: home
+        },
+        {
+            path: '/index',
+            name: index
+        }
+    ]
+})
+
+/*
 const routes = [
     {
-        path: '/home',
+        path: '/',
         name: 'home',
         component: () => import('../views/home.vue')
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     },
 
     {
@@ -21,4 +31,4 @@ const routes = [
         name: 'index',
         component: index
     }
-]
+]*/

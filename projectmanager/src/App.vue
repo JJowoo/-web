@@ -28,6 +28,8 @@
       <router-link to="/home">home</router-link>|
       <router-link to="/index">index</router-link>
     </div>
+
+    
     <router-view/>
 
 
